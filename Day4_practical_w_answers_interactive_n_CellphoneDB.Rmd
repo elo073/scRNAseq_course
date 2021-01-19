@@ -49,7 +49,7 @@ In yesterday's practical you looked at the immune cells in covid infected vs hea
 
 Task 1. Look for marker genes in Human Protein Atlas (HPA) for tissue localisation https://www.proteinatlas.org/ 
 Open the file with highly expressed genes in healthy macrophages in LibreOffice:
-/home/training/practical_day3/healthy_macs.tsv
+/home/training/practical_day3/healthy_macs.tsv # Hint: if there was problem with creating the file, they are also found in /home/training/practical_day3/ELO
 
 These are the genes upregulated in healthy macrophages, thus should be possible to find in the HPA. Search the first gene, FABP4 in HPA Tissue atlas. Choose Lung tissue, subsection Lung, open images. Can you see where the macrophages are? Why are the images so different? Another regular macrophage marker is in the top list - C1QA - check this in the HPA in a similar way. Do you notice anything in particular in the gene lists?
 
@@ -110,6 +110,8 @@ cellphonedb plot heatmap_plot ../../../practical_day3/cellphonedb_meta_healthy.t
 #Open the plots and look at them. Observe differences between covid and healthy. What do you observe?
 
 #Answer: A lot more interactions in the covid data. The largest amount of interactions in the macrophages could be confounded by the largest number of cells in.
+#Ready-made plots are also found in /home/training/CPDB/out/COVID_neg/out/ and /home/training/CPDB/out/COVID_pos/out/
+
 
 # The next section is for plotting the significant interactions as a dot plot.
 # This is done in R. Open R(studio) and follow the commands: 
@@ -144,7 +146,9 @@ cellphonedb plot dot_plot --means-path=means.txt --pvalues-path=pvalues.txt --ro
 
 For which purpose can this method be used? What are the benefits and drawbacks of cellPhoneDB?
 
-Answer: More significant interactions in the covid samples, which was also evident from the previous heatmap plots. The method can be used to look at any cell-cell interactions , although the immune interactions are a big part of the data. This can really help interpretation of the single cell data (to infer function on the new cell types for example). For more comfortable usage, this tool could be integrated with the Seurat workflow.
+#Answer: More significant interactions in the covid samples, which was also evident from the previous heatmap plots. The method can be used to look at any cell-cell interactions , although the immune interactions are a big part of the data. This can really help interpretation of the single cell data (to infer function on the new cell types for example). For more comfortable usage, this tool could be integrated with the Seurat workflow.
+#Ready-made plots are also found in /home/training/CPDB/out/COVID_neg/out/plot2.pdf and /home/training/CPDB/out/COVID_pos/out/plot2.pdf
+
 
 ## Final words
 Thank you and good-bye
