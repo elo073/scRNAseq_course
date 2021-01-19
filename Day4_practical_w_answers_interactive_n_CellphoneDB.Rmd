@@ -40,11 +40,20 @@ Answer: There are clusters with detected ACE2. The cells cluster by metadata fea
 
 Conclusion: We looked at two different ways of sharing your data. One is tailored approach by the author in choosing cells, thresholds, batch correctin etc manually, the other is common approach for all. Based on these two samples, can you comment on the benefits/shortcomings of both approaches?
 
+3. Annotating cell types by Azimuth tool
+In the Day 3 practical you used a code to predict cell type labels. For immune cells, there is an online reference tool Azimuth that uses it's own CITE-seq  human peripheral blood mononuclear cells reference for mapping queries: https://satijalab.org/azimuth/ (https://www.biorxiv.org/content/10.1101/2020.10.12.335331v1). 
+
+Task 1. Use the Azimuth tool to explore the covid dataset annotations.
+Open Azimuth tool (https://satijalab.org/azimuth/) -> Visit the App
+Upload the dataset used in practical (/home/training/practical_day3/reference.rds)
+Wait for the data to be mapped, look at the results. Choose to show a table with prediced annotations and the author-provided annotations (annot). How many annotations match/don't match? Do the nong-matching annotations make sense? Is the use of Azimuth tool justified in this case?
+
+Answer: Some mismatch is expected, as single cells often are not so good quality map every single one correctly. Also, some discrepancy between difficult-to-distinguish populations is very normal. Different levels of annotations will map higher category in one dataset between multiple subpopulations in more finely annotated dataset. In lack of exact population, the next bes should be chosen, which explains how macrophages mapped as monocytes. Mismatches therefore make sense. In current case the covid data is from lungs and the reference is from blood. The quite good match of populations increases confidence in our annotations, but should not be used for annotating this data as the only option.
 
 ####  Break ####
 
 
-3. Exploring own dataset further
+4. Exploring own dataset further
 In yesterday's practical you looked at the immune cells in covid infected vs healthy lung bonchiolveolar lavage. Let's explore the files that you saved.
 
 Task 1. Look for marker genes in Human Protein Atlas (HPA) for tissue localisation https://www.proteinatlas.org/ 
@@ -63,7 +72,7 @@ Observe significant enrichments. Do they make sense? Repeat the same with top 20
 
 Answer: There are many enrichments that are immune (response) related. There is also COVID-19 related enrichment that makes most sense. The categories are roughly similar with top 20 genes, but with lower significance.
 
-4. Perform receptor-ligand analysis via the CellPhoneDB tool https://www.cellphonedb.org/
+5. Perform receptor-ligand analysis via the CellPhoneDB tool https://www.cellphonedb.org/
 CellPhoneDB tool explores receptor and ligand expression in all the cell type pairs in your dataset. This allowes to infer cell signaling and infer biologicical function.
 For smaller datasets, the interactive tool allows for analysis online: https://www.cellphonedb.org/explore-sc-rna-seq
 The interactive tool is often busy, therefore we use a command line version in the practical. 
